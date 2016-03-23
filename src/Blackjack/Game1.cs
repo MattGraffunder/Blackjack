@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Blackjack.Inputs;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -11,6 +12,8 @@ namespace Blackjack
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Input input = new KeyboardInput();
 
         public Game1()
         {
@@ -29,6 +32,8 @@ namespace Blackjack
             // TODO: Add your initialization logic here
 
             base.Initialize();
+
+            input = InputFactory.GetInput();
         }
 
         /// <summary>
@@ -59,8 +64,12 @@ namespace Blackjack
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (input.Exit)
+            {
                 Exit();
+            }
+
+            input.Update();
 
             // TODO: Add your update logic here
 

@@ -41,6 +41,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="Inputs\Input.cs" />
+    <Compile Include="Inputs\InputFactory.cs" />
+    <Compile Include="Inputs\KeyboardInput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
