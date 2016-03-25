@@ -1,4 +1,5 @@
-﻿using Blackjack.Inputs;
+﻿using Blackjack.CardGame;
+using Blackjack.Inputs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,12 +14,24 @@ namespace Blackjack
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Input input = new KeyboardInput();
+        Input input;
+
+        Dealer _dealer;
+        Player _player;
+
+        Deck _deck;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            input = InputFactory.GetInput();
+            _player = new Player(input);
+
+            _dealer = new Dealer();
+
+            _deck = new Deck(6);
         }
 
         /// <summary>
@@ -33,7 +46,7 @@ namespace Blackjack
 
             base.Initialize();
 
-            input = InputFactory.GetInput();
+            input = InputFactory.GetInput();                       
         }
 
         /// <summary>
@@ -69,6 +82,17 @@ namespace Blackjack
                 Exit();
             }
 
+            if (input.Deal)
+            {
+                _dealer.ClearHand();
+                _player.ClearHand();
+
+                _dealer.TakeCard(_deck.Draw());
+                _player.TakeCard(_deck.Draw());
+                _dealer.TakeCard(_deck.Draw());
+                _player.TakeCard(_deck.Draw());
+            }
+
             input.Update();
 
             // TODO: Add your update logic here
@@ -82,7 +106,7 @@ namespace Blackjack
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Green);
 
             // TODO: Add your drawing code here
 

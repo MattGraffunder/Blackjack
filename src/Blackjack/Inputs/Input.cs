@@ -10,7 +10,9 @@ namespace Blackjack.Inputs
     {
         //Exit Game
         public bool Exit { get; set; }
-        
+
+        public bool Deal { get; set; }
+
         public abstract void Update(); 
     }
 }

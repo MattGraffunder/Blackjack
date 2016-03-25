@@ -17,6 +17,8 @@ namespace Blackjack.Inputs
             currentKeyboardState = Keyboard.GetState();
 
             Exit = currentKeyboardState.IsKeyDown(Keys.Escape);
+
+            Deal = currentKeyboardState.IsKeyDown(Keys.Space) && previousKeyboardState.IsKeyUp(Keys.Space);
         }
     }
 }

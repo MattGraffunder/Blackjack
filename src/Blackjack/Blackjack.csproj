@@ -40,10 +40,17 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CardGame\Card.cs" />
+    <Compile Include="CardGame\Deck.cs" />
+    <Compile Include="CardGame\Suit.cs" />
+    <Compile Include="CardGame\Value.cs" />
+    <Compile Include="Dealer.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="CardGame\Hand.cs" />
     <Compile Include="Inputs\Input.cs" />
     <Compile Include="Inputs\InputFactory.cs" />
     <Compile Include="Inputs\KeyboardInput.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
