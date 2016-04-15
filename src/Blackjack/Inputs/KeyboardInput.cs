@@ -18,7 +18,20 @@ namespace Blackjack.Inputs
 
             Exit = currentKeyboardState.IsKeyDown(Keys.Escape);
 
-            Deal = currentKeyboardState.IsKeyDown(Keys.Space) && previousKeyboardState.IsKeyUp(Keys.Space);
+            Deal = WasKeyPressed(Keys.Space);
+
+            Hit = WasKeyPressed(Keys.Z);
+
+            Split = WasKeyPressed(Keys.X);
+
+            DoubleDown = WasKeyPressed(Keys.C);
+
+            Stay = WasKeyPressed(Keys.V);
+        }
+
+        private bool WasKeyPressed(Keys key)
+        {
+            return currentKeyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
         }
     }
 }

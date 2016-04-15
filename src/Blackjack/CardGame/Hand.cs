@@ -31,11 +31,15 @@ namespace Blackjack.CardGame
                 // Add Aces Last
                 var aces = this.Where(c => c.Rank == Rank.Ace);
 
+                IsSoft = false;
+
                 foreach (Card ace in aces)
                 {
                     if (value < 11)
                     {
                         value += 11;
+
+                        IsSoft = true;
                     }
                     else
                     {
@@ -46,6 +50,16 @@ namespace Blackjack.CardGame
                 return value;
             }
         }
+
+        public bool IsBlackjack
+        {
+            get
+            {
+                return (HandValue == 21 && this.Count == 2);
+            }
+        }
+
+        public bool IsSoft { get; private set; }
 
         public bool CanSplit
         {
@@ -62,6 +76,24 @@ namespace Blackjack.CardGame
             {
                 return this.Count == 2;
             }
+        }
+
+        public bool IsBust
+        {
+            get
+            {
+                return HandValue > 21;
+            }
+        }
+
+        public int HandBet { get; set; }
+
+        public HandResult Result { get; set; }
+
+        public Hand()
+            : base()
+        {
+            Result = HandResult.None;
         }
     }
 }

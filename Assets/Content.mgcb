@@ -145,3 +145,9 @@
 /processorParam:TextureFormat=Color
 /build:Images/Chipsets/spritesheet_chips_large.png
 
+#begin Fonts/BlackJackFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Fonts/BlackJackFont.spritefont
+

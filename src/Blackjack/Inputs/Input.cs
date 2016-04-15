@@ -9,10 +9,18 @@ namespace Blackjack.Inputs
     abstract class Input
     {
         //Exit Game
-        public bool Exit { get; set; }
+        public bool Exit { get; protected set; }
 
-        public bool Deal { get; set; }
+        public bool Deal { get; protected set; }
 
-        public abstract void Update(); 
+        public bool Hit { get; protected set; }
+
+        public bool Split { get; protected set; }
+
+        public bool DoubleDown { get; protected set; }
+
+        public bool Stay { get; protected set; }
+
+        public abstract void Update();
     }
 }
