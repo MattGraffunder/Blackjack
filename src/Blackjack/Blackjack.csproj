@@ -49,18 +49,16 @@
     <Compile Include="CardGame\Suit.cs" />
     <Compile Include="CardGame\Rank.cs" />
     <Compile Include="Display\ChipDisplay.cs" />
-    <Compile Include="Dealer.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="Game\Game1.cs" />
     <Compile Include="CardGame\Hand.cs" />
     <Compile Include="Enums\HandResult.cs" />
     <Compile Include="Enums\HandState.cs" />
     <Compile Include="Inputs\Input.cs" />
     <Compile Include="Inputs\InputFactory.cs" />
     <Compile Include="Inputs\KeyboardInput.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Table.cs" />
+    <Compile Include="Game\Table.cs" />
     <Compile Include="Display\TextDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
